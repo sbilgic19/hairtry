@@ -11,12 +11,14 @@
     h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
     h3 { font-size: 17px; margin-top: 20px; margin-bottom: 8px; }
     p, li { font-size: 15px; margin-bottom: 12px; }
-    ul { padding-left: 24px; }
+    ul { padding-left: 24px; margin-bottom: 16px; }
     .meta { color: #666; font-size: 14px; margin-bottom: 32px; }
     a { color: #007AFF; }
     table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    th, td { text-align: left; padding: 10px 12px; border: 1px solid #ddd; font-size: 14px; }
-    th { background: #f5f5f5; }
+    th, td { text-align: left; padding: 10px 12px; border: 1px solid #ddd; font-size: 14px; vertical-align: top; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .info-box { background: #f8f8f8; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin: 16px 0; }
+    .info-box p { margin-bottom: 4px; }
   </style>
 </head>
 <body>
@@ -24,98 +26,187 @@
 <h1>Privacy Policy</h1>
 <p class="meta">Last updated: March 26, 2026</p>
 
-<p>HairTry ("App", "we", "us", "our") respects your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+<h2>1. Data Controller</h2>
+<div class="info-box">
+  <p><strong>Data Controller:</strong> Serkan Berk Bilgiç (Sole Proprietorship)</p>
+  <p><strong>Address:</strong> Barbaros Mah. Lale Sk. Ağaoğlu My Office Kapı No:2 Daire No:13, Ataşehir/İstanbul, Turkey</p>
+  <p><strong>Email:</strong> <a href="mailto:sberk.bilgic@gmail.com">sberk.bilgic@gmail.com</a></p>
+</div>
+<p>This Privacy Policy describes how HairTry ("App", "we", "us", "our") collects, uses, stores, and protects your personal data when you use our mobile application. This policy is prepared in accordance with Turkey's Personal Data Protection Law No. 6698 ("KVKK"), the General Data Protection Regulation ("GDPR") where applicable, and Apple's App Store Review Guidelines.</p>
+<p>By downloading, installing, or using HairTry, you acknowledge that you have read and understood this Privacy Policy.</p>
 
-<h2>1. Information We Collect</h2>
+<h2>2. Categories of Personal Data and Processing</h2>
+<p>We process personal data under specific lawful bases as outlined below. We follow the principles of data minimization and purpose limitation.</p>
 
-<h3>1.1 Information You Provide</h3>
 <table>
-  <tr><th>Data</th><th>Purpose</th><th>Stored Where</th></tr>
-  <tr><td>Photos (selfies)</td><td>AI hairstyle generation</td><td>Firebase Storage (encrypted)</td></tr>
-  <tr><td>Hairstyle selections</td><td>Process your request</td><td>Firebase Firestore</td></tr>
+  <tr>
+    <th>Data Category</th>
+    <th>Data Types</th>
+    <th>Purpose</th>
+    <th>Legal Basis (KVKK)</th>
+  </tr>
+  <tr>
+    <td><strong>Identity</strong></td>
+    <td>Anonymous user ID (Firebase Auth)</td>
+    <td>Link your generations to your device, manage your account</td>
+    <td>Performance of a contract (Art. 5/2-c)</td>
+  </tr>
+  <tr>
+    <td><strong>Visual Data</strong></td>
+    <td>Photos (selfies) you upload</td>
+    <td>AI hairstyle generation — your photo is sent to AI services (Google Gemini, OpenAI) solely for generating hairstyle previews</td>
+    <td>Explicit consent (Art. 5/1); Performance of a contract (Art. 5/2-c)</td>
+  </tr>
+  <tr>
+    <td><strong>Transaction</strong></td>
+    <td>Subscription status, credit balance, purchase history</td>
+    <td>Manage your subscription, process credits, deliver paid features</td>
+    <td>Performance of a contract (Art. 5/2-c)</td>
+  </tr>
+  <tr>
+    <td><strong>Technical</strong></td>
+    <td>Device type, OS version, app version, crash reports</td>
+    <td>App stability, debugging, performance monitoring</td>
+    <td>Legitimate interest (Art. 5/2-f)</td>
+  </tr>
+  <tr>
+    <td><strong>Usage</strong></td>
+    <td>Hairstyle selections, generation history, session data</td>
+    <td>Deliver the service, improve user experience</td>
+    <td>Performance of a contract (Art. 5/2-c); Legitimate interest (Art. 5/2-f)</td>
+  </tr>
 </table>
 
-<h3>1.2 Information Collected Automatically</h3>
+<h2>3. Data We Do NOT Collect</h2>
+<ul>
+  <li>We do <strong>not</strong> collect your name, email address, phone number, or physical address.</li>
+  <li>We do <strong>not</strong> collect location data (GPS, IP-based geolocation).</li>
+  <li>We do <strong>not</strong> collect contacts or address book data.</li>
+  <li>We do <strong>not</strong> use cookies or web tracking technologies.</li>
+  <li>We do <strong>not</strong> collect advertising identifiers (IDFA/GAID).</li>
+  <li>We do <strong>not</strong> use your photos for AI model training.</li>
+</ul>
+
+<h2>4. How Your Photos Are Processed</h2>
+<p>Transparency about photo processing is important to us:</p>
+<ul>
+  <li><strong>Upload:</strong> When you select a hairstyle, your photo is uploaded to our secure server (Firebase Storage, encrypted in transit via HTTPS/TLS).</li>
+  <li><strong>AI Processing:</strong> Your photo is sent to a third-party AI service (Google Gemini or OpenAI GPT Image) along with the hairstyle description to generate a preview. <strong>The photo is used solely for this single generation request.</strong></li>
+  <li><strong>Storage:</strong> Your uploaded photos and generated results are stored in Firebase Storage, associated with your anonymous user ID.</li>
+  <li><strong>No Training:</strong> Your photos are <strong>never</strong> used for training AI models, advertising, profiling, or any purpose other than delivering your requested hairstyle preview.</li>
+  <li><strong>No Sharing:</strong> Your photos are <strong>never</strong> sold, shared with third parties, or made publicly accessible.</li>
+</ul>
+
+<h2>5. Third-Party Services</h2>
+<p>We use the following third-party services that may process your data in the course of providing the App:</p>
 <table>
-  <tr><th>Data</th><th>Purpose</th><th>Stored Where</th></tr>
-  <tr><td>Anonymous user ID</td><td>Link your generations to your device</td><td>Firebase Auth</td></tr>
-  <tr><td>Device language/locale</td><td>Display the App in your language</td><td>Device only (not transmitted)</td></tr>
-  <tr><td>Subscription status</td><td>Manage credits and access</td><td>RevenueCat (payment processor)</td></tr>
-  <tr><td>Crash reports &amp; analytics</td><td>Improve App stability</td><td>Firebase Analytics / Crashlytics</td></tr>
+  <tr>
+    <th>Service</th>
+    <th>Provider</th>
+    <th>Purpose</th>
+    <th>Data Processed</th>
+    <th>Privacy Policy</th>
+  </tr>
+  <tr>
+    <td>Firebase Auth, Firestore, Storage</td>
+    <td>Google LLC (USA)</td>
+    <td>Authentication, database, file storage</td>
+    <td>Anonymous ID, photos, generation data</td>
+    <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
+  </tr>
+  <tr>
+    <td>Firebase Analytics / Crashlytics</td>
+    <td>Google LLC (USA)</td>
+    <td>Analytics, crash reporting</td>
+    <td>Device info, crash logs, usage events</td>
+    <td><a href="https://firebase.google.com/support/privacy" target="_blank">Link</a></td>
+  </tr>
+  <tr>
+    <td>Gemini AI</td>
+    <td>Google LLC (USA)</td>
+    <td>AI hairstyle image generation</td>
+    <td>Uploaded photo, hairstyle prompt</td>
+    <td><a href="https://ai.google.dev/gemini-api/terms" target="_blank">Link</a></td>
+  </tr>
+  <tr>
+    <td>GPT Image</td>
+    <td>OpenAI Inc. (USA)</td>
+    <td>AI hairstyle image generation (premium)</td>
+    <td>Uploaded photo, hairstyle prompt</td>
+    <td><a href="https://openai.com/policies/privacy-policy" target="_blank">Link</a></td>
+  </tr>
+  <tr>
+    <td>RevenueCat</td>
+    <td>RevenueCat Inc. (USA)</td>
+    <td>Subscription and payment management</td>
+    <td>Anonymous ID, subscription status, purchase events</td>
+    <td><a href="https://www.revenuecat.com/privacy" target="_blank">Link</a></td>
+  </tr>
 </table>
+<p>We do not sell, trade, or otherwise transfer your personal data to any third parties except the service providers listed above, which are necessary for the operation of the App.</p>
 
-<h3>1.3 Information We Do NOT Collect</h3>
+<h2>6. International Data Transfers</h2>
+<p>Your data may be transferred to and processed in:</p>
 <ul>
-  <li>We do not collect your name, email address, phone number, or physical address.</li>
-  <li>We do not collect location data.</li>
-  <li>We do not collect contacts or address book data.</li>
-  <li>We do not use cookies or web tracking technologies.</li>
+  <li><strong>European Union:</strong> Firebase services (region: europe-west3, Frankfurt, Germany) — primary data storage</li>
+  <li><strong>United States:</strong> AI processing services (Google Gemini, OpenAI), RevenueCat, Firebase Analytics</li>
 </ul>
+<p>These transfers are conducted in compliance with KVKK Article 9 and, where applicable, GDPR Chapter V. The third-party providers listed above maintain appropriate safeguards (Standard Contractual Clauses, data processing agreements) for international data transfers.</p>
 
-<h2>2. How We Use Your Information</h2>
-<ul>
-  <li><strong>Photo processing:</strong> Your uploaded photo is sent to our AI service (Google Gemini or OpenAI) to generate a hairstyle preview. The photo is used solely for this purpose.</li>
-  <li><strong>Service delivery:</strong> To process your hairstyle requests, manage your credits, and deliver results.</li>
-  <li><strong>Improvement:</strong> Aggregated, anonymized usage data helps us improve the App.</li>
-</ul>
-
-<h2>3. Photo Storage and Deletion</h2>
-<ul>
-  <li>Uploaded photos and generated results are stored in Firebase Storage associated with your anonymous user ID.</li>
-  <li>Photos are used exclusively for hairstyle generation — never for training AI models, advertising, or sharing with third parties.</li>
-  <li>You can delete your generation history within the App.</li>
-  <li>If you uninstall the App, your anonymous account and associated data will be automatically deleted after 30 days of inactivity.</li>
-</ul>
-
-<h2>4. Third-Party Services</h2>
-<p>We use the following third-party services that may process your data:</p>
-<table>
-  <tr><th>Service</th><th>Provider</th><th>Purpose</th><th>Privacy Policy</th></tr>
-  <tr><td>Firebase</td><td>Google</td><td>Authentication, database, storage, analytics</td><td><a href="https://firebase.google.com/support/privacy">Link</a></td></tr>
-  <tr><td>Gemini AI</td><td>Google</td><td>AI image generation</td><td><a href="https://ai.google.dev/terms">Link</a></td></tr>
-  <tr><td>GPT Image</td><td>OpenAI</td><td>AI image generation (premium)</td><td><a href="https://openai.com/privacy">Link</a></td></tr>
-  <tr><td>RevenueCat</td><td>RevenueCat Inc.</td><td>Subscription and payment management</td><td><a href="https://www.revenuecat.com/privacy">Link</a></td></tr>
-</table>
-<p>These services process data according to their own privacy policies. We do not sell your data to any third party.</p>
-
-<h2>5. Data Security</h2>
+<h2>7. Data Security</h2>
+<p>We implement technical and administrative measures to protect your personal data:</p>
 <ul>
   <li>All data transmission uses HTTPS/TLS encryption.</li>
-  <li>Firebase Storage and Firestore are secured with authentication rules — users can only access their own data.</li>
-  <li>Server-side operations use Firebase Admin SDK with restricted permissions.</li>
-  <li>No payment card data ever touches our servers — all payments are handled by Apple/Google.</li>
+  <li>Firebase Storage and Firestore are secured with server-side authentication rules — users can only access their own data.</li>
+  <li>Server-side operations use Firebase Admin SDK with restricted permissions (principle of least privilege).</li>
+  <li>No payment card data ever touches our servers — all payments are processed by Apple App Store and Google Play Store.</li>
+  <li>Access to production systems is restricted and monitored.</li>
 </ul>
 
-<h2>6. Children's Privacy</h2>
-<p>HairTry is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us and we will delete it promptly.</p>
-
-<h2>7. Your Rights</h2>
-<p>Depending on your location, you may have the following rights:</p>
+<h2>8. Data Retention and Deletion</h2>
 <ul>
-  <li><strong>Access:</strong> Request a copy of the data we hold about you.</li>
-  <li><strong>Deletion:</strong> Request deletion of your data.</li>
-  <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
-  <li><strong>Data portability:</strong> Request your data in a portable format.</li>
-  <li><strong>Objection:</strong> Object to certain processing of your data.</li>
+  <li><strong>Active accounts:</strong> Data is retained as long as you actively use the App.</li>
+  <li><strong>Inactive accounts:</strong> Accounts with no activity for 90 days may be flagged for deletion. Data associated with inactive accounts is deleted within 30 days of the flagging.</li>
+  <li><strong>Account deletion:</strong> You may request deletion of your account and all associated data at any time by contacting us at <a href="mailto:sberk.bilgic@gmail.com">sberk.bilgic@gmail.com</a>. We will process your request within 30 days.</li>
+  <li><strong>Transaction records:</strong> Subscription transaction records are retained as required by applicable tax and commercial law.</li>
 </ul>
-<p>To exercise any of these rights, contact us at <a href="mailto:hairtryapp@gmail.com">hairtryapp@gmail.com</a>. We will respond within 30 days.</p>
 
-<h2>8. Data Retention</h2>
+<h2>9. Your Rights Under KVKK (Article 11)</h2>
+<p>As a data subject, you have the following rights regarding your personal data:</p>
 <ul>
-  <li>Active account data is retained as long as you use the App.</li>
-  <li>Inactive accounts and associated data are deleted after 30 days of inactivity.</li>
-  <li>Subscription transaction records are retained as required by law and Apple/Google Store policies.</li>
+  <li><strong>a)</strong> Learn whether your personal data is being processed;</li>
+  <li><strong>b)</strong> Request information about the processing if your data has been processed;</li>
+  <li><strong>c)</strong> Learn the purpose of the processing and whether your data is used in accordance with its purpose;</li>
+  <li><strong>d)</strong> Know the third parties to whom your personal data is transferred, domestically or abroad;</li>
+  <li><strong>e)</strong> Request rectification of your personal data if it is incomplete or inaccurate;</li>
+  <li><strong>f)</strong> Request deletion or destruction of your personal data under the conditions set forth in Article 7 of KVKK;</li>
+  <li><strong>g)</strong> Request notification of rectification, deletion, or destruction to third parties to whom your data has been transferred;</li>
+  <li><strong>h)</strong> Object to any result that is to your detriment arising from the analysis of your processed data exclusively by automated systems;</li>
+  <li><strong>i)</strong> Claim compensation for damages arising from the unlawful processing of your personal data.</li>
+</ul>
+<p>To exercise any of these rights, please contact us at <a href="mailto:sberk.bilgic@gmail.com">sberk.bilgic@gmail.com</a> with your request. Your request must be explicit and understandable, and must contain identity information so that we can verify your identity. We will respond within 30 days of receiving your request, free of charge. If the request requires additional costs, we may charge a fee in accordance with the tariff determined by the Personal Data Protection Board.</p>
+
+<h2>10. Your Rights Under GDPR (Where Applicable)</h2>
+<p>If you are located in the European Economic Area (EEA), you additionally have the right to:</p>
+<ul>
+  <li>Access a copy of your personal data;</li>
+  <li>Request data portability in a machine-readable format;</li>
+  <li>Withdraw your consent at any time (without affecting the lawfulness of processing based on consent before its withdrawal);</li>
+  <li>Lodge a complaint with a supervisory authority.</li>
 </ul>
 
-<h2>9. International Data Transfers</h2>
-<p>Your data may be processed in data centers located in the European Union (Firebase region: europe-west3, Frankfurt, Germany) and the United States (AI processing). By using the App, you consent to this transfer. We ensure appropriate safeguards are in place for international data transfers.</p>
+<h2>11. Children's Privacy</h2>
+<p>HairTry is not directed at children under 13 (or under 16 in the EEA). We do not knowingly collect personal data from children under these ages. If you believe we have inadvertently collected data from a child, please contact us immediately and we will delete it within 48 hours.</p>
 
-<h2>10. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you through the App or by updating the "Last updated" date. Continued use of the App constitutes acceptance of the updated policy.</p>
+<h2>12. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you by updating the "Last updated" date at the top of this page. We encourage you to review this page periodically. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-<h2>11. Contact Us</h2>
-<p>If you have questions about this Privacy Policy or your data, contact us at:</p>
-<p>Email: <a href="mailto:hairtryapp@gmail.com">hairtryapp@gmail.com</a></p>
+<h2>13. Contact Us</h2>
+<div class="info-box">
+  <p><strong>Data Controller:</strong> Serkan Berk Bilgiç</p>
+  <p><strong>Email:</strong> <a href="mailto:sberk.bilgic@gmail.com">sberk.bilgic@gmail.com</a></p>
+  <p><strong>Address:</strong> Barbaros Mah. Lale Sk. Ağaoğlu My Office Kapı No:2 Daire No:13, Ataşehir/İstanbul, Turkey</p>
+</div>
 
 </body>
 </html>
