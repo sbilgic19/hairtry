@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HairTry — Support</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a1a; background: #fff; padding: 24px; max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 32px; }
+    a { color: #007AFF; }
+    .info-box { background: #f8f8f8; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin: 16px 0; }
+    .info-box p { margin-bottom: 4px; }
+    form { margin-top: 16px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #333; }
+    input, select, textarea { width: 100%; padding: 10px 12px; font-size: 15px; font-family: inherit; border: 1px solid #d0d0d0; border-radius: 8px; background: #fff; color: #1a1a1a; line-height: 1.4; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #007AFF; box-shadow: 0 0 0 3px rgba(0,122,255,0.15); }
+    textarea { min-height: 140px; resize: vertical; }
+    button { background: #007AFF; color: #fff; border: none; border-radius: 8px; padding: 12px 20px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: inherit; width: 100%; }
+    button:hover { background: #0062cc; }
+    button:disabled { background: #c0c0c0; cursor: not-allowed; }
+    .help-note { color: #666; font-size: 13px; margin-top: 12px; line-height: 1.5; }
+    .quick-links { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+    .quick-links a { display: inline-block; }
+    ul { padding-left: 24px; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+
+<h1>Support</h1>
+<p class="meta">We're here to help. Most messages get a reply within 1–2 business days.</p>
+
+<h2>Common questions</h2>
+<ul>
+  <li><strong>Subscription, billing or refunds?</strong> Refunds are handled directly by Apple. Open the App Store → tap your profile → Purchase History → "Report a Problem".</li>
+  <li><strong>Delete my data?</strong> Tap "Account &amp; Data" in the app's Settings, or email us and we'll handle it within 30 days.</li>
+  <li><strong>App crashed or generation failed?</strong> Use the form below — include your device model, iOS version, and what you were doing when it happened.</li>
+  <li><strong>Privacy &amp; legal?</strong> See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</li>
+</ul>
+
+<h2>Send us a message</h2>
+<form id="support-form">
+  <div class="field">
+    <label for="name">Your name <span style="color:#999;font-weight:400">(optional)</span></label>
+    <input type="text" id="name" name="name" autocomplete="name" />
+  </div>
+
+  <div class="field">
+    <label for="email">Reply-to email <span style="color:#999;font-weight:400">(so we can get back to you)</span></label>
+    <input type="email" id="email" name="email" autocomplete="email" />
+  </div>
+
+  <div class="field">
+    <label for="category">Topic</label>
+    <select id="category" name="category">
+      <option value="General">General question</option>
+      <option value="Bug">Bug report / app issue</option>
+      <option value="Billing">Subscription / billing</option>
+      <option value="Account">Account / data deletion</option>
+      <option value="Feature">Feature request</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required placeholder="Tell us what's happening — the more detail, the better."></textarea>
+  </div>
+
+  <button type="submit">Open in Mail to send</button>
+  <p class="help-note">Tapping the button opens your email app with the message pre-filled. Tap <strong>Send</strong> there to actually deliver it.</p>
+</form>
+
+<h2>Or email us directly</h2>
+<div class="info-box">
+  <p><strong>HairTry Support</strong></p>
+  <p><strong>Email:</strong> <a href="mailto:sberk.bilgic@gmail.com">sberk.bilgic@gmail.com</a></p>
+  <p><strong>Owner:</strong> Serkan Berk Bilgiç</p>
+  <p><strong>Address:</strong> Barbaros Mah. Lale Sk. Ağaoğlu My Office Kapı No:2 Daire No:13, Ataşehir/İstanbul, Turkey</p>
+</div>
+
+<p class="meta" style="margin-top:32px;text-align:center">
+  <a href="index.html">← Back to HairTry Legal</a>
+</p>
+
+<script>
+  document.getElementById('support-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var category = document.getElementById('category').value;
+    var message = document.getElementById('message').value.trim();
+
+    if (!message) {
+      alert('Please write a message before sending.');
+      return;
+    }
+
+    var subject = '[HairTry Support] ' + category;
+    var lines = [];
+    if (name) lines.push('From: ' + name);
+    if (email) lines.push('Reply-to: ' + email);
+    if (lines.length) lines.push('');
+    lines.push(message);
+    lines.push('');
+    lines.push('—');
+    lines.push('Sent from the HairTry support page');
+
+    var body = lines.join('\n');
+    var mailto = 'mailto:sberk.bilgic@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  });
+</script>
+
+</body>
+</html>
